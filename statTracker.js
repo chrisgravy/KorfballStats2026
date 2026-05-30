@@ -35,10 +35,12 @@ function populateRounds() {
 
     rounds.forEach(match => {
 
-        const option = document.createElement('option');
+        const option = 
+            document.createElement('option');
 
         option.value = 
             match.round_number;
+            
         option.textContent = 
             `Round ${match.round_number}`;
 
