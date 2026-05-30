@@ -1,0 +1,498 @@
+[
+    {
+        "round": "Round 1 - 17/5/26",
+        "division": 1,
+        "date": "2026-05-17",
+        "datetime": "2026-05-17T10:45:00",
+        "home_team": "Boomers",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 1 - 17/5/26",
+        "division": 2,
+        "date": "2026-05-17",
+        "datetime": "2026-05-17T10:45:00",
+        "home_team": "Boomers",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 1 - 17/5/26",
+        "division": 1,
+        "date": "2026-05-17",
+        "datetime": "2026-05-17T12:00:00",
+        "home_team": "North",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 1 - 17/5/26",
+        "division": 2,
+        "date": "2026-05-17",
+        "datetime": "2026-05-17T12:00:00",
+        "home_team": "North",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 2 - 24/5/26",
+        "division": 1,
+        "date": "2026-05-24",
+        "datetime": "2026-05-24T10:45:00",
+        "home_team": "Scaldis",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 2 - 24/5/26",
+        "division": 2,
+        "date": "2026-05-24",
+        "datetime": "2026-05-24T10:45:00",
+        "home_team": "Scaldis",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 2 - 24/5/26",
+        "division": 1,
+        "date": "2026-05-24",
+        "datetime": "2026-05-24T12:00:00",
+        "home_team": "North",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 2 - 24/5/26",
+        "division": 2,
+        "date": "2026-05-24",
+        "datetime": "2026-05-24T12:00:00",
+        "home_team": "North",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 3 - 31/5/26",
+        "division": 1,
+        "date": "2026-05-31",
+        "datetime": "2026-05-31T10:45:00",
+        "home_team": "Boomers",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 3 - 31/5/26",
+        "division": 2,
+        "date": "2026-05-31",
+        "datetime": "2026-05-31T10:45:00",
+        "home_team": "Boomers",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 3 - 31/5/26",
+        "division": 1,
+        "date": "2026-05-31",
+        "datetime": "2026-05-31T12:00:00",
+        "home_team": "Arista",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 3 - 31/5/26",
+        "division": 2,
+        "date": "2026-05-31",
+        "datetime": "2026-05-31T12:00:00",
+        "home_team": "Arista",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 4 - 14/6/26",
+        "division": 1,
+        "date": "2026-06-14",
+        "datetime": "2026-06-14T12:30:00",
+        "home_team": "Scaldis",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 4 - 14/6/26",
+        "division": 2,
+        "date": "2026-06-14",
+        "datetime": "2026-06-14T12:30:00",
+        "home_team": "Scaldis",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 4 - 14/6/26",
+        "division": 1,
+        "date": "2026-06-14",
+        "datetime": "2026-06-14T13:45:00",
+        "home_team": "Arista",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 4 - 14/6/26",
+        "division": 2,
+        "date": "2026-06-14",
+        "datetime": "2026-06-14T13:45:00",
+        "home_team": "Arista",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 5 - 21/6/26",
+        "division": 1,
+        "date": "2026-06-21",
+        "datetime": "2026-06-21T12:30:00",
+        "home_team": "Boomers",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 5 - 21/6/26",
+        "division": 2,
+        "date": "2026-06-21",
+        "datetime": "2026-06-21T12:30:00",
+        "home_team": "Boomers",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 5 - 21/6/26",
+        "division": 1,
+        "date": "2026-06-21",
+        "datetime": "2026-06-21T13:45:00",
+        "home_team": "Arista",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 5 - 21/6/26",
+        "division": 2,
+        "date": "2026-06-21",
+        "datetime": "2026-06-21T13:45:00",
+        "home_team": "Arista",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 6 - 28/6/26",
+        "division": 1,
+        "date": "2026-06-28",
+        "datetime": "2026-06-28T12:30:00",
+        "home_team": "Scaldis",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 6 - 28/6/26",
+        "division": 2,
+        "date": "2026-06-28",
+        "datetime": "2026-06-28T12:30:00",
+        "home_team": "Scaldis",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 6 - 28/6/26",
+        "division": 1,
+        "date": "2026-06-28",
+        "datetime": "2026-06-28T13:45:00",
+        "home_team": "North",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 6 - 28/6/26",
+        "division": 2,
+        "date": "2026-06-28",
+        "datetime": "2026-06-28T13:45:00",
+        "home_team": "North",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 7 - 5/7/26",
+        "division": 1,
+        "date": "2026-07-05",
+        "datetime": "2026-07-05T12:30:00",
+        "home_team": "Boomers",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 7 - 5/7/26",
+        "division": 2,
+        "date": "2026-07-05",
+        "datetime": "2026-07-05T12:30:00",
+        "home_team": "Boomers",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 7 - 5/7/26",
+        "division": 1,
+        "date": "2026-07-05",
+        "datetime": "2026-07-05T13:45:00",
+        "home_team": "North",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 7 - 5/7/26",
+        "division": 2,
+        "date": "2026-07-05",
+        "datetime": "2026-07-05T13:45:00",
+        "home_team": "North",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 8 - 12/7/26",
+        "division": 1,
+        "date": "2026-07-12",
+        "datetime": "2026-07-12T10:45:00",
+        "home_team": "Scaldis",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 8 - 12/7/26",
+        "division": 2,
+        "date": "2026-07-12",
+        "datetime": "2026-07-12T10:45:00",
+        "home_team": "Scaldis",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 8 - 12/7/26",
+        "division": 1,
+        "date": "2026-07-12",
+        "datetime": "2026-07-12T12:00:00",
+        "home_team": "North",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 8 - 12/7/26",
+        "division": 2,
+        "date": "2026-07-12",
+        "datetime": "2026-07-12T12:00:00",
+        "home_team": "North",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 9 - 19/7/26",
+        "division": 1,
+        "date": "2026-07-19",
+        "datetime": "2026-07-19T10:45:00",
+        "home_team": "Boomers",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 9 - 19/7/26",
+        "division": 2,
+        "date": "2026-07-19",
+        "datetime": "2026-07-19T10:45:00",
+        "home_team": "Boomers",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 9 - 19/7/26",
+        "division": 1,
+        "date": "2026-07-19",
+        "datetime": "2026-07-19T12:00:00",
+        "home_team": "Arista",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 9 - 19/7/26",
+        "division": 2,
+        "date": "2026-07-19",
+        "datetime": "2026-07-19T12:00:00",
+        "home_team": "Arista",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 10 - 26/7/26",
+        "division": 2,
+        "date": "2026-07-26",
+        "datetime": "2026-07-26T10:45:00",
+        "home_team": "Arista",
+        "away_team": "Flinders"
+    },
+    {
+        "round": "Round 10 - 26/7/26",
+        "division": 1,
+        "date": "2026-07-26",
+        "datetime": "2026-07-26T12:00:00",
+        "home_team": "Arista",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 10 - 26/7/26",
+        "division": 2,
+        "date": "2026-07-26",
+        "datetime": "2026-07-26T12:00:00",
+        "home_team": "Arista",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 11 - 2/8/26",
+        "division": 1,
+        "date": "2026-08-02",
+        "datetime": "2026-08-02T10:45:00",
+        "home_team": "Boomers",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 11 - 2/8/26",
+        "division": 2,
+        "date": "2026-08-02",
+        "datetime": "2026-08-02T10:45:00",
+        "home_team": "Boomers",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 11 - 2/8/26",
+        "division": 1,
+        "date": "2026-08-02",
+        "datetime": "2026-08-02T12:00:00",
+        "home_team": "Arista",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 11 - 2/8/26",
+        "division": 2,
+        "date": "2026-08-02",
+        "datetime": "2026-08-02T12:00:00",
+        "home_team": "Arista",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 12 - 9/8/26",
+        "division": 1,
+        "date": "2026-08-09",
+        "datetime": "2026-08-09T10:45:00",
+        "home_team": "North",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 12 - 9/8/26",
+        "division": 2,
+        "date": "2026-08-09",
+        "datetime": "2026-08-09T10:45:00",
+        "home_team": "North",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 12 - 9/8/26",
+        "division": 1,
+        "date": "2026-08-09",
+        "datetime": "2026-08-09T12:00:00",
+        "home_team": "Scaldis",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 12 - 9/8/26",
+        "division": 2,
+        "date": "2026-08-09",
+        "datetime": "2026-08-09T12:00:00",
+        "home_team": "Scaldis",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 13 - 16/8/26",
+        "division": 1,
+        "date": "2026-08-16",
+        "datetime": "2026-08-16T10:45:00",
+        "home_team": "North",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 13 - 16/8/26",
+        "division": 2,
+        "date": "2026-08-16",
+        "datetime": "2026-08-16T10:45:00",
+        "home_team": "North",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 13 - 16/8/26",
+        "division": 1,
+        "date": "2026-08-16",
+        "datetime": "2026-08-16T12:00:00",
+        "home_team": "Boomers",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 13 - 16/8/26",
+        "division": 2,
+        "date": "2026-08-16",
+        "datetime": "2026-08-16T12:00:00",
+        "home_team": "Boomers",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 14 - 23/8/26",
+        "division": 2,
+        "date": "2026-08-23",
+        "datetime": "2026-08-23T10:45:00",
+        "home_team": "Scaldis",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 14 - 23/8/26",
+        "division": 1,
+        "date": "2026-08-23",
+        "datetime": "2026-08-23T12:00:00",
+        "home_team": "North",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 14 - 23/8/26",
+        "division": 2,
+        "date": "2026-08-23",
+        "datetime": "2026-08-23T12:00:00",
+        "home_team": "North",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 14 - 23/8/26",
+        "division": 1,
+        "date": "2026-08-23",
+        "datetime": "2026-08-23T13:15:00",
+        "home_team": "Scaldis",
+        "away_team": "Arista"
+    },
+    {
+        "round": "Round 15 - 30/8/26",
+        "division": 2,
+        "date": "2026-08-30",
+        "datetime": "2026-08-30T10:45:00",
+        "home_team": "Arista",
+        "away_team": "Boomers"
+    },
+    {
+        "round": "Round 15 - 30/8/26",
+        "division": 1,
+        "date": "2026-08-30",
+        "datetime": "2026-08-30T12:00:00",
+        "home_team": "Arista",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 15 - 30/8/26",
+        "division": 2,
+        "date": "2026-08-30",
+        "datetime": "2026-08-30T12:00:00",
+        "home_team": "Arista",
+        "away_team": "North"
+    },
+    {
+        "round": "Round 15 - 30/8/26",
+        "division": 1,
+        "date": "2026-08-30",
+        "datetime": "2026-08-30T13:15:00",
+        "home_team": "Boomers",
+        "away_team": "Scaldis"
+    },
+    {
+        "round": "Round 15 - 30/8/26",
+        "division": 1,
+        "date": "2026-08-30",
+        "datetime": "2026-08-30T13:15:00",
+        "home_team": "3rd",
+        "away_team": "2nd"
+    },
+    {
+        "round": "Round 15 - 30/8/26",
+        "division": 2,
+        "date": "2026-08-30",
+        "datetime": "2026-08-30T12:00:00",
+        "home_team": "1st ",
+        "away_team": "winner PF"
+    },
+    {
+        "round": "Round 15 - 30/8/26",
+        "division": 1,
+        "date": "2026-08-30",
+        "datetime": "2026-08-30T13:15:00",
+        "home_team": "1st ",
+        "away_team": "winner PF"
+    }
+]
