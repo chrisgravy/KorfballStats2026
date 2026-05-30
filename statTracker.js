@@ -14,120 +14,65 @@ async function loadMatches() {
 loadMatches();
 
 function populateRounds() {
+    const division = parseInt(document.getElementById('divisionSelect').value);
+    const roundSelect = document.getElementById('roundSelect');
+    roundSelect.innerHTML = '<option value="" disabled selected hidden>Select Round</option>';
 
-    const division =
-        parseInt(document.getElementById('divisionSelect').value);
-
-    const roundSelect =
-        document.getElementById('roundSelect');
-
-    roundSelect.innerHTML =
-        '<option value="">Select Round</option>';
-
-    const rounds =
-        [...new Map(
-            matches
-                .filter(m => m.division === division)
-                .map(m => [m.round, m.round_number])
-        ).values()]
-            .sort((a, b) => a.round_number - b.round_number);
-
-
-    rounds.forEach(match => {
-
-        const option = 
-            document.createElement('option');
-
-        option.value = 
-            match.round_number;
-            
-        option.textContent = 
-            `Round ${match.round_number}`;
-
-        roundSelect.appendChild(option);
-
-    });
-
+    const seen = new Set();
+    matches
+        .filter(m => m.division === division)
+        .forEach(m => {
+            if (!seen.has(m.round_number)) {
+                seen.add(m.round_number);
+                const option = document.createElement('option');
+                option.value = m.round_number;
+                option.textContent = `Round ${m.round_number}`;
+                roundSelect.appendChild(option);
+            }
+        });
 }
 
 function populateMatches() {
+    const division = parseInt(document.getElementById('divisionSelect').value);
+    const round = parseInt(document.getElementById('roundSelect').value);
+    const matchSelect = document.getElementById('matchSelect');
+    matchSelect.innerHTML = '<option value="" disabled selected hidden>Select Match</option>';
 
-    const division =
-        parseInt(document.getElementById('divisionSelect').value);
+    matches.forEach((match, index) => {
+        if (match.division !== division || match.round_number !== round) return;
+        if (!match.home_team || !match.away_team) return; // skip nulls
 
-    const round =
-        parseInt(document.getElementById('roundSelect').value);
-
-    const matchSelect =
-        document.getElementById('matchSelect');
-
-    matchSelect.innerHTML =
-        '<option value="">Select Match</option>';
-
-    const roundMatches =
-        matches.filter(m =>
-            m.division === division &&
-            m.round_number === round
-        );
-
-    roundMatches.forEach((match, index) => {
-
-        const option = 
-            document.createElement('option');
-        option.value = 
-            matches.indexOf(match);
-        
-        const time = 
-            new Date(match.datetime)
-            .toLocaleTimeString('en-AU', {
-                 hour: '2-digit',
-                 minute: '2-digit' 
-            });
-        option.textContent = 
-            `${match.home_team} vs ${match.away_team} (${time})`;
-        
+        const option = document.createElement('option');
+        option.value = index; // use index as the value
+        const time = new Date(match.datetime).toLocaleTimeString('en-AU', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        option.textContent = `${match.home_team} vs ${match.away_team} (${time})`;
         matchSelect.appendChild(option);
-
     });
-
-    }
+}
 
 function loadSelectedMatch() {
+    const matchSelect = document.getElementById('matchSelect');
+    const index = matchSelect.value;
+    if (index === '' || index === null) return;
 
-    const option = 
-        document.getElementById('matchSelect').selectedOptions[0];
-
-    if (!option.dataset.matchId) return;
-
-    const match = 
-        matches[option.dataset.matchId];
+    const match = matches[parseInt(index)]; // ← use value directly
+    if (!match) return;
 
     document.getElementById('matchDate').value =
         new Date(match.datetime).toLocaleDateString('en-AU');
-    
-    document.getElementById('selectVenue').value =
-        match.venue;
 
     // Home Team
-    const homeSelect = 
-        document.querySelector('#homeSheet .team-select');
-
-    homeSelect.value = 
-        match.home_club;
-
-    homeSelect.dispatchEvent(
-        new Event('change'));
+    const homeSelect = document.querySelector('#homeSheet .team-select');
+    homeSelect.value = match.home_club;
+    homeSelect.dispatchEvent(new Event('change'));
 
     // Away Team
-    const awaySelect =
-        document.querySelector('#awaySheet .team-select');
-
-    awaySelect.value =
-        match.away_club;
-
-    awaySelect.dispatchEvent(
-        new Event('change'));
-
+    const awaySelect = document.querySelector('#awaySheet .team-select');
+    awaySelect.value = match.away_club;
+    awaySelect.dispatchEvent(new Event('change'));
 }
 
 document
