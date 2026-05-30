@@ -402,6 +402,12 @@ function attachEvents() {
 
                 refreshDisplayedStat(value);
 
+                const player =
+                    row.querySelector('.player-input')?.value || 'Unnamed Player';
+
+                const statName =
+                    stats[cellIndex - 1];
+
                 addLogEntry(
                     player,
                     statName,
