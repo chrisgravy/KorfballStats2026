@@ -175,12 +175,14 @@ function createTeamSheet(id, placeholder) {
     container.innerHTML = `
                 <div class="team-header">
                     <select class="team-select">
-                        <option value="">Select Team</option>
+                        <option value="" disabled selected hidden>Select Team</option>
                         <option value="Scaldis Tigers">Scaldis Tigers</option>
+                        <option value="Scaldis Tigers - Black">Scaldis Tigers - Black</option>
                         <option value="Adelaide Boomers">Adelaide Boomers</option>
                         <option value="North Adelaide Roosters">North Adelaide Roosters</option>
                         <option value="Arista Marion">Arista Marion</option>
                         <option value="Flinders Sharks">Flinders Sharks</option>
+                        <option value="Flinders Sharks - Blue">Flinders Sharks - Blue</option>
                     </select>
                 </div>
                 ${createDivision('First Attack')}
