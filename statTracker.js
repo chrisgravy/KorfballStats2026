@@ -8,12 +8,18 @@ async function loadMatches() {
     matches = await response.json();
 
     console.log(matches);
+    document.getElementById('divisionSelect').addEventListener('change', populateRounds);
+
+    document.getElementById('roundSelect').addEventListener('change', populateMatches);
+
+    document.getElementById('matchSelect').addEventListener('change', loadSelectedMatch);
 
 }
 
 loadMatches();
 
 function populateRounds() {
+    console.log('matches:', matches);
     const division = parseInt(document.getElementById('divisionSelect').value);
     const roundSelect = document.getElementById('roundSelect');
     roundSelect.innerHTML = '<option value="" disabled selected hidden>Select Round</option>';
@@ -74,18 +80,6 @@ function loadSelectedMatch() {
     awaySelect.value = match.away_club;
     awaySelect.dispatchEvent(new Event('change'));
 }
-
-document
-    .getElementById('divisionSelect')
-    .addEventListener('change', populateRounds);
-
-document
-    .getElementById('roundSelect')
-    .addEventListener('change', populateMatches);
-
-document
-    .getElementById('matchSelect')
-    .addEventListener('change', loadSelectedMatch);
 
 const stats = ['SA', 'SM', 'PA', 'PM', 'AST', 'REB', 'STK', 'TOV', 'GA'];
 
