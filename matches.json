@@ -8,7 +8,7 @@
         "venue": "Unley",
         "home_team": "Flinders Blue",
         "away_team": "North",
-        "home_club": "Flinders Blue",
+        "home_club": "Flinders Sharks - Blue",
         "away_club": "North Adelaide Roosters"
     },
     {
@@ -57,7 +57,7 @@
         "home_team": "Boomers",
         "away_team": "Scaldis Black",
         "home_club": "Adelaide Boomers",
-        "away_club": "Scaldis Black"
+        "away_club": "Scaldis Tigers - Black"
     },
     {
         "round": "Round 2 - 24/5/26",
@@ -93,7 +93,7 @@
         "home_team": "Scaldis",
         "away_team": "Flinders Blue",
         "home_club": "Scaldis Tigers",
-        "away_club": "Flinders Blue"
+        "away_club": "Flinders Sharks - Blue"
     },
     {
         "round": "Round 2 - 24/5/26",
@@ -128,7 +128,7 @@
         "venue": "Unley",
         "home_team": "Flinders Blue",
         "away_team": "Arista",
-        "home_club": "Flinders Blue",
+        "home_club": "Flinders Sharks - Blue",
         "away_club": "Arista Marion"
     },
     {
@@ -153,7 +153,7 @@
         "home_team": "Scaldis",
         "away_team": "Scaldis Black",
         "home_club": "Scaldis Tigers",
-        "away_club": "Scaldis Black"
+        "away_club": "Scaldis Tigers - Black"
     },
     {
         "round": "Round 3 - 31/5/26",
@@ -188,7 +188,7 @@
         "venue": "Unley",
         "home_team": "Flinders Blue",
         "away_team": "Boomers",
-        "home_club": "Flinders Blue",
+        "home_club": "Flinders Sharks - Blue",
         "away_club": "Adelaide Boomers"
     },
     {
@@ -237,7 +237,7 @@
         "home_team": "Arista",
         "away_team": "Scaldis Black",
         "home_club": "Arista Marion",
-        "away_club": "Scaldis Black"
+        "away_club": "Scaldis Tigers - Black"
     },
     {
         "round": "Round 5 - 21/6/26",
@@ -273,7 +273,7 @@
         "home_team": "North",
         "away_team": "Scaldis Black",
         "home_club": "North Adelaide Roosters",
-        "away_club": "Scaldis Black"
+        "away_club": "Scaldis Tigers - Black"
     },
     {
         "round": "Round 5 - 21/6/26",
@@ -296,7 +296,7 @@
         "venue": "Unley",
         "home_team": "Flinders Blue",
         "away_team": "Flinders",
-        "home_club": "Flinders Blue",
+        "home_club": "Flinders Sharks - Blue",
         "away_club": "Flinders Sharks"
     },
     {
@@ -332,7 +332,7 @@
         "venue": "Unley",
         "home_team": "Scaldis Black",
         "away_team": "Flinders",
-        "home_club": "Scaldis Black",
+        "home_club": "Scaldis Tigers - Black",
         "away_club": "Flinders Sharks"
     },
     {
@@ -416,8 +416,8 @@
         "venue": "Unley",
         "home_team": "Flinders Blue",
         "away_team": "Scaldis Black",
-        "home_club": "Flinders Blue",
-        "away_club": "Scaldis Black"
+        "home_club": "Flinders Sharks - Blue",
+        "away_club": "Scaldis Tigers - Black"
     },
     {
         "round": "Round 8 - 12/7/26",
@@ -489,7 +489,7 @@
         "home_team": "North",
         "away_team": "Flinders Blue",
         "home_club": "North Adelaide Roosters",
-        "away_club": "Flinders Blue"
+        "away_club": "Flinders Sharks - Blue"
     },
     {
         "round": "Round 9 - 19/7/26",
@@ -536,7 +536,7 @@
         "venue": "Unley",
         "home_team": "Scaldis Black",
         "away_team": "Boomers",
-        "home_club": "Scaldis Black",
+        "home_club": "Scaldis Tigers - Black",
         "away_club": "Adelaide Boomers"
     },
     {
@@ -572,7 +572,7 @@
         "venue": "Unley",
         "home_team": "Flinders Blue",
         "away_team": "Scaldis",
-        "home_club": "Flinders Blue",
+        "home_club": "Flinders Sharks - Blue",
         "away_club": "Scaldis Tigers"
     },
     {
@@ -609,7 +609,7 @@
         "home_team": "Arista",
         "away_team": "Flinders Blue",
         "home_club": "Arista Marion",
-        "away_club": "Flinders Blue"
+        "away_club": "Flinders Sharks - Blue"
     },
     {
         "round": "Round 11 - 2/8/26",
@@ -656,7 +656,7 @@
         "venue": "Unley",
         "home_team": "Scaldis Black",
         "away_team": "Scaldis",
-        "home_club": "Scaldis Black",
+        "home_club": "Scaldis Tigers - Black",
         "away_club": "Scaldis Tigers"
     },
     {
@@ -669,7 +669,7 @@
         "home_team": "Boomers",
         "away_team": "Flinders Blue",
         "home_club": "Adelaide Boomers",
-        "away_club": "Flinders Blue"
+        "away_club": "Flinders Sharks - Blue"
     },
     {
         "round": "Round 12 - 9/8/26",
@@ -716,7 +716,7 @@
         "venue": "Unley",
         "home_team": "Scaldis Black",
         "away_team": "Arista",
-        "home_club": "Scaldis Black",
+        "home_club": "Scaldis Tigers - Black",
         "away_club": "Arista Marion"
     },
     {
@@ -729,7 +729,7 @@
         "home_team": "Flinders",
         "away_team": "Flinders Blue",
         "home_club": "Flinders Sharks",
-        "away_club": "Flinders Blue"
+        "away_club": "Flinders Sharks - Blue"
     },
     {
         "round": "Round 13 - 16/8/26",
@@ -752,7 +752,7 @@
         "venue": "Unley",
         "home_team": "Scaldis Black",
         "away_team": "North",
-        "home_club": "Scaldis Black",
+        "home_club": "Scaldis Tigers - Black",
         "away_club": "North Adelaide Roosters"
     },
     {
@@ -813,7 +813,7 @@
         "home_team": "Flinders",
         "away_team": "Scaldis Black",
         "home_club": "Flinders Sharks",
-        "away_club": "Scaldis Black"
+        "away_club": "Scaldis Tigers - Black"
     },
     {
         "round": "Round 14 - 23/8/26",
@@ -872,8 +872,8 @@
         "venue": "Unley",
         "home_team": "Scaldis Black",
         "away_team": "Flinders Blue",
-        "home_club": "Scaldis Black",
-        "away_club": "Flinders Blue"
+        "home_club": "Scaldis Tigers - Black",
+        "away_club": "Flinders Sharks - Blue"
     },
     {
         "round": "Round 15 - 30/8/26",

@@ -99,11 +99,13 @@ function loadSelectedMatch() {
 const stats = ['SA', 'SM', 'PA', 'PM', 'AST', 'REB', 'STK', 'TOV', 'GA'];
 
 const teamStyles = {
-    "Scaldis Tigers": { bg: "#000000", text: "#FE5A1D" },
+    "Scaldis Tigers": { bg: "#FE5A1D", text: "#000000" },
+    "Scaldis Tigers - Black": { bg: "#000000", text: "#FE5A1D" },
     "Adelaide Boomers": { bg: "#019e4d", text: "#590577" },
     "North Adelaide Roosters": { bg: "#ae2e2d", text: "#FFFFFF" },
     "Arista Marion": { bg: "#f7c407", text: "#da251e" },
     "Flinders Sharks": { bg: "#88bfff", text: "#FFFFFF" },
+    "Flinders Sharks - Blue": { bg: "#326EBD", text: "#FFFFFF" },
     "Default": { bg: "#111111", text: "#FFFFFF" }
 };
 

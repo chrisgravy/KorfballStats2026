@@ -13,11 +13,15 @@ TEAM_MAP = {
 
     "Scaldis": "Scaldis Tigers",
 
+    "Scaldis Black": "Scaldis Tigers - Black",
+
     "North": "North Adelaide Roosters",
 
     "Arista": "Arista Marion",
 
     "Flinders": "Flinders Sharks",
+
+    "Flinders Blue": "Flinders Sharks - Blue"
 }
 
 matches = []
