@@ -40,76 +40,49 @@ for i, row in enumerate(rows):
         )
 
         if match:
-            round_number = match.group(1)
+            round_number = int(match.group(1))
 
             current_date = datetime.strptime(
                 match.group(2),
                 "%d/%m/%y"
             ).date()
 
+    # LEFT COURT
+    if row[4] in [1, 2]:
 
-    # -------------------------
-    # Division 1
-    # -------------------------
-    division = row[9]
+        matches.append({
+            "round": current_round,
+            "round_number": round_number,
+            "division": row[4],
+            "date": current_date.isoformat(),
+            "datetime": datetime.combine(current_date, row[3]).isoformat(),
+            "venue": current_venue,
 
-    if division == 1:
+            "home_team": row[5],
+            "away_team": row[6],
 
-        match_time = row[3]
-        home_team = row[10]
-        away_team = row[11]
+            "home_club": TEAM_MAP.get(str(row[5]).strip(), row[5]),
+            "away_club": TEAM_MAP.get(str(row[6]).strip(), row[6])
+        })
 
-        if match_time and home_team and away_team:
 
-            start_datetime = datetime.combine(
-                current_date,
-                match_time
-            )
+    # RIGHT COURT
+    if row[9] in [1, 2]:
 
-            matches.append({
-                "round": current_round,
-                "division": division,
-                "date": current_date.isoformat(),
-                "datetime": start_datetime.isoformat(),
-                "venue": current_venue,
+        matches.append({
+            "round": current_round,
+            "round_number": round_number,
+            "division": row[9],
+            "date": current_date.isoformat(),
+            "datetime": datetime.combine(current_date, row[3]).isoformat(),
+            "venue": current_venue,
 
-                "home_team": home_team,
-                "away_team": away_team,
+            "home_team": row[10],
+            "away_team": row[11],
 
-                "home_club": TEAM_MAP.get(home_team.strip(), home_team),
-                "away_club": TEAM_MAP.get(away_team.strip(), away_team)
-            })
-
-    # -------------------------
-    # Division 2
-    # -------------------------
-    division = row[4]
-
-    if division == 2:
-
-        match_time = row[3]
-        home_team = row[5]
-        away_team = row[6]
-        if match_time and home_team and away_team:
-
-            start_datetime = datetime.combine(
-                current_date,
-                match_time
-            )
-
-            matches.append({
-                "round": current_round,
-                "division": division,
-                "date": current_date.isoformat(),
-                "datetime": start_datetime.isoformat(),
-                "venue": current_venue,
-
-                "home_team": home_team,
-                "away_team": away_team,
-
-                "home_club": TEAM_MAP.get(home_team.strip(), home_team),
-                "away_club": TEAM_MAP.get(away_team.strip(), away_team)
-            })
+            "home_club": TEAM_MAP.get(str(row[10]).strip(), row[10]),
+            "away_club": TEAM_MAP.get(str(row[11]).strip(), row[11])
+        })
 
 print(f"Found {len(matches)} matches")
 

@@ -13,10 +13,6 @@ async function loadMatches() {
 
 loadMatches();
 
-document
-    .getElementById('divisionSelect')
-    .addEventListener('change', populateRounds);
-
 function populateRounds() {
 
     const division =
@@ -29,26 +25,28 @@ function populateRounds() {
         '<option value="">Select Round</option>';
 
     const rounds =
-        [...new Set(
+        [...new Map(
             matches
                 .filter(m => m.division === division)
-                .map(m => m.round)
-        )];
+                .map(m => [m.round, m.round_number])
+        ).values()]
+            .sort((a, b) => a.round_number - b.round_number);
 
-    rounds.forEach(round => {
 
-        roundSelect.innerHTML +=
-            `<option value="${round}">${round}</option>`;
+    rounds.forEach(match => {
+
+        const option = document.createElement('option');
+
+        option.value = 
+            match.round_number;
+        option.textContent = 
+            `Round ${match.round_number}`;
+
+        roundSelect.appendChild(option);
 
     });
 
-    roundSelect.disabled = false;
-
 }
-
-document
-    .getElementById('roundSelect')
-    .addEventListener('change', populateMatches);
 
 function populateMatches() {
 
@@ -56,7 +54,7 @@ function populateMatches() {
         parseInt(document.getElementById('divisionSelect').value);
 
     const round =
-        document.getElementById('roundSelect').value;
+        parseInt(document.getElementById('roundSelect').value);
 
     const matchSelect =
         document.getElementById('matchSelect');
@@ -67,77 +65,74 @@ function populateMatches() {
     const roundMatches =
         matches.filter(m =>
             m.division === division &&
-            m.round === round
+            m.round_number === round
         );
 
     roundMatches.forEach((match, index) => {
 
-        matchSelect.innerHTML += `
-            <option value="${index}">
-                ${match.home_team} vs ${match.away_team}
-            </option>
-        `;
+        const option = 
+            document.createElement('option');
+        option.value = 
+            index;
+        option.textContent = 
+            `${match.home_team} vs ${match.away_team} (${match.datetime.slice(11, 16)})`;
+        option.dataset.matchId = 
+            matches.indexOf(match);
+        matchSelect.appendChild(option);
 
     });
 
-    matchSelect.disabled = false;
+    }
 
-}
+function loadSelectedMatch() {
 
-document
-    .getElementById('matchSelect')
-    .addEventListener('change', loadMatchDetails);
+    const option = 
+        document.getElementById('matchSelect').selectedOptions[0];
 
-function loadMatchDetails() {
+    if (!option.dataset.matchId) return;
 
-    const division =
-        parseInt(document.getElementById('divisionSelect').value);
-
-    const round =
-        document.getElementById('roundSelect').value;
-
-    const selectedIndex =
-        parseInt(document.getElementById('matchSelect').value);
-
-    const roundMatches =
-        matches.filter(m =>
-            m.division === division &&
-            m.round === round
-        );
-
-    const match =
-        roundMatches[selectedIndex];
-
-    if (!match) return;
+    const match = 
+        matches[option.dataset.matchId];
 
     document.getElementById('matchDate').value =
-        match.date;
+        new Date(match.datetime).toLocaleDateString('en-AU');
+    
+    document.getElementById('selectVenue').value =
+        match.venue;
 
-    // Venue once added to JSON
-    // document.getElementById('selectVenue').value =
-    //     match.venue;
-
-    const homeSelect =
+    // Home Team
+    const homeSelect = 
         document.querySelector('#homeSheet .team-select');
 
+    homeSelect.value = 
+        match.home_club;
+
+    homeSelect.dispatchEvent(
+        new Event('change'));
+
+    // Away Team
     const awaySelect =
         document.querySelector('#awaySheet .team-select');
-
-    homeSelect.value =
-        match.home_club;
 
     awaySelect.value =
         match.away_club;
 
-    homeSelect.dispatchEvent(
-        new Event('change')
-    );
-
     awaySelect.dispatchEvent(
-        new Event('change')
-    );
+        new Event('change'));
 
 }
+
+document
+    .getElementById('divisionSelect')
+    .addEventListener('change', populateRounds);
+
+document
+    .getElementById('roundSelect')
+    .addEventListener('change', populateMatches);
+
+document
+    .getElementById('matchSelect')
+    .addEventListener('change', loadSelectedMatch);
 
 const stats = ['SA', 'SM', 'PA', 'PM', 'AST', 'REB', 'STK', 'TOV', 'GA'];
 
