@@ -64,21 +64,36 @@ function loadSelectedMatch() {
     const index = matchSelect.value;
     if (index === '' || index === null) return;
 
-    const match = matches[parseInt(index)]; // ← use value directly
+    const match = matches[parseInt(index)];
     if (!match) return;
-
-    document.getElementById('matchDate').value =
-        new Date(match.datetime).toLocaleDateString('en-AU');
 
     // Home Team
     const homeSelect = document.querySelector('#homeSheet .team-select');
-    homeSelect.value = match.home_club;
-    homeSelect.dispatchEvent(new Event('change'));
+    if (homeSelect) {
+        homeSelect.value = match.home_club;
+        if (!homeSelect.value) {
+            const opt = document.createElement('option');
+            opt.value = match.home_club;
+            opt.textContent = match.home_club;
+            homeSelect.appendChild(opt);
+            homeSelect.value = match.home_club;
+        }
+        homeSelect.dispatchEvent(new Event('change'));
+    }
 
     // Away Team
     const awaySelect = document.querySelector('#awaySheet .team-select');
-    awaySelect.value = match.away_club;
-    awaySelect.dispatchEvent(new Event('change'));
+    if (awaySelect) {
+        awaySelect.value = match.away_club;
+        if (!awaySelect.value) {
+            const opt = document.createElement('option');
+            opt.value = match.away_club;
+            opt.textContent = match.away_club;
+            awaySelect.appendChild(opt);
+            awaySelect.value = match.away_club;
+        }
+        awaySelect.dispatchEvent(new Event('change'));
+    }
 }
 
 const stats = ['SA', 'SM', 'PA', 'PM', 'AST', 'REB', 'STK', 'TOV', 'GA'];
@@ -1058,28 +1073,6 @@ function exportPDF() {
     });
 }
 
-// Date input auto-format
-const matchDate = document.getElementById('matchDate');
-let deletingDate = false;
-matchDate.addEventListener('keydown', e => { deletingDate = e.key === 'Backspace'; });
-matchDate.addEventListener('input', e => {
-    let numbers = e.target.value.replace(/\D/g, '');
-    if (numbers.length > 8) numbers = numbers.slice(0, 8);
-    if (deletingDate) {
-        let raw = '';
-        if (numbers.length <= 2) raw = numbers;
-        else if (numbers.length <= 4) raw = numbers.slice(0, 2) + '/' + numbers.slice(2);
-        else raw = numbers.slice(0, 2) + '/' + numbers.slice(2, 4) + '/' + numbers.slice(4);
-        e.target.value = raw;
-        return;
-    }
-    let formatted = '';
-    if (numbers.length >= 1) { formatted += numbers.slice(0, 2); if (numbers.length >= 2) formatted += '/'; }
-    if (numbers.length >= 3) { formatted += numbers.slice(2, 4); if (numbers.length >= 4) formatted += '/'; }
-    if (numbers.length >= 5) formatted += numbers.slice(4, 8);
-    e.target.value = formatted;
-});
-
 document.addEventListener('DOMContentLoaded', () => {
     createTeamSheet('homeSheet', 'Home Team');
     createTeamSheet('awaySheet', 'Away Team');
@@ -1096,6 +1089,30 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('logModal')?.addEventListener('click', function(e) {
         if (e.target === this) hideLog();
     });
+
+    // Date input auto-format
+    const matchDate = document.getElementById('matchDate');
+    if (matchDate) {
+        let deletingDate = false;
+        matchDate.addEventListener('keydown', e => { deletingDate = e.key === 'Backspace'; });
+        matchDate.addEventListener('input', e => {
+            let numbers = e.target.value.replace(/\D/g, '');
+            if (numbers.length > 8) numbers = numbers.slice(0, 8);
+            if (deletingDate) {
+                let raw = '';
+                if (numbers.length <= 2) raw = numbers;
+                else if (numbers.length <= 4) raw = numbers.slice(0, 2) + '/' + numbers.slice(2);
+                else raw = numbers.slice(0, 2) + '/' + numbers.slice(2, 4) + '/' + numbers.slice(4);
+                e.target.value = raw;
+                return;
+            }
+            let formatted = '';
+            if (numbers.length >= 1) { formatted += numbers.slice(0, 2); if (numbers.length >= 2) formatted += '/'; }
+            if (numbers.length >= 3) { formatted += numbers.slice(2, 4); if (numbers.length >= 4) formatted += '/'; }
+            if (numbers.length >= 5) formatted += numbers.slice(4, 8);
+            e.target.value = formatted;
+        });
+    }
 
     updateTrackingMode();
     updateAll();
