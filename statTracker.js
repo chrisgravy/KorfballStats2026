@@ -73,11 +73,17 @@ function populateMatches() {
         const option = 
             document.createElement('option');
         option.value = 
-            index;
-        option.textContent = 
-            `${match.home_team} vs ${match.away_team} (${match.datetime.slice(11, 16)})`;
-        option.dataset.matchId = 
             matches.indexOf(match);
+        
+        const time = 
+            new Date(match.datetime)
+            .toLocaleTimeString('en-AU', {
+                 hour: '2-digit',
+                 minute: '2-digit' 
+            });
+        option.textContent = 
+            `${match.home_team} vs ${match.away_team} (${time})`;
+        
         matchSelect.appendChild(option);
 
     });
