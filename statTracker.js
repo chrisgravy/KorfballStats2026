@@ -1089,15 +1089,17 @@ matchDate.addEventListener('input', e => {
     e.target.value = formatted;
 });
 
-createTeamSheet('homeSheet', 'Home Team');
-createTeamSheet('awaySheet', 'Away Team');
-attachTeamSelectors();
-attachQuarterButtons();
-attachEvents();
+document.addEventListener('DOMContentLoaded', async () => {
+    createTeamSheet('homeSheet', 'Home Team');
+    createTeamSheet('awaySheet', 'Away Team');
+    attachTeamSelectors();
+    attachQuarterButtons();
+    attachEvents();
 
-document
-    .getElementById('trackingMode')
-    .addEventListener('change', updateTrackingMode);
+    document
+        .getElementById('trackingMode')
+        .addEventListener('change', updateTrackingMode);
 
-updateTrackingMode();
-updateAll();
+    updateTrackingMode();
+    updateAll();
+});
