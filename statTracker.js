@@ -630,9 +630,10 @@ function resetStats() {
     });
 
     // Reset header fields
-    document.getElementById('matchDate').value = '';
-    document.getElementById('selectVenue').selectedIndex = 0;
-    document.getElementById('roundInput').selectedIndex = 0;
+    document.getElementById('matchDate') && (document.getElementById('matchDate').value = '');
+    document.getElementById('divisionSelect').selectedIndex = 0;
+    document.getElementById('roundSelect').selectedIndex = 0;
+    document.getElementById('matchSelect').selectedIndex = 0;
 
     // Reset all totals cells
     document.querySelectorAll('.totals-row td').forEach(td => {
@@ -748,18 +749,6 @@ function hideLog() {
 
 }
 
-// Close when clicking outside the modal box
-document.getElementById('keyModal').addEventListener('click', function (e) {
-    if (e.target === this) hideKey();
-});
-
-document.getElementById('logModal').addEventListener('click', function (e) {
-
-    if (e.target === this)
-        hideLog();
-
-});
-
 function updateTrackingMode() {
 
     const mode =
@@ -806,10 +795,11 @@ function updateTrackingMode() {
 function saveGame() {
     try {
         const data = {
-            date: document.getElementById('matchDate').value || '',
-            venue: document.getElementById('selectVenue').selectedIndex || 0,
-            round: document.getElementById('roundInput').selectedIndex || 0,
-            teams: []
+            date:     document.getElementById('matchDate')?.value || '',
+            division: document.getElementById('divisionSelect')?.selectedIndex || 0,
+            round:    document.getElementById('roundSelect')?.selectedIndex || 0,
+            match:    document.getElementById('matchSelect')?.selectedIndex || 0,
+            teams:    []
         };
 
         document.querySelectorAll('.team-sheet').forEach(sheet => {
@@ -858,8 +848,9 @@ function loadGame() {
 
         // Restore header fields
         document.getElementById('matchDate').value = data.date || '';
-        document.getElementById('selectVenue').selectedIndex = data.venue || 0;
-        document.getElementById('roundInput').selectedIndex = data.round || 0;
+        document.getElementById('divisionSelect').selectedIndex = data.division || 0;
+        document.getElementById('roundSelect').selectedIndex = data.round || 0;
+        document.getElementById('matchSelect').selectedIndex = data.match || 0;
 
         // Restore each team
         document.querySelectorAll('.team-sheet').forEach((sheet, ti) => {
@@ -1089,16 +1080,22 @@ matchDate.addEventListener('input', e => {
     e.target.value = formatted;
 });
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
     createTeamSheet('homeSheet', 'Home Team');
     createTeamSheet('awaySheet', 'Away Team');
     attachTeamSelectors();
     attachQuarterButtons();
     attachEvents();
 
-    document
-        .getElementById('trackingMode')
-        .addEventListener('change', updateTrackingMode);
+    document.getElementById('trackingMode')?.addEventListener('change', updateTrackingMode);
+
+    document.getElementById('keyModal')?.addEventListener('click', function(e) {
+        if (e.target === this) hideKey();
+    });
+
+    document.getElementById('logModal')?.addEventListener('click', function(e) {
+        if (e.target === this) hideLog();
+    });
 
     updateTrackingMode();
     updateAll();
