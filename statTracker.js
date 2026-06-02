@@ -1007,23 +1007,24 @@ function exportPDF() {
     });
 
     // Convert inputs → spans using snapshotted values
-    element.querySelectorAll('input').forEach((input, i) => {
+    const dateInput = element.querySelector('#matchDate');
+
+    if (dateInput) {
         const span = document.createElement('span');
-        const labels = ['Match Date: '];
-        span.innerText = (labels[i] || '') + (liveInputValues[i] ?? '');
-        span.style.fontWeight = 'bold';
-        input.replaceWith(span);
-    });
+        span.innerText = `Match Date: ${dateInput.value}`;
+        dateInput.replaceWith(span);
+    };
 
     // Convert selects → spans using snapshotted indices
-    element.querySelectorAll('select').forEach((select, i) => {
+    const venueSelect = element.querySelector('#venueSelect');
+
+    if (venueSelect) {
         const span = document.createElement('span');
-        const idx = liveSelectIndices[i] ?? select.selectedIndex;
-        const labels = ['Venue: '];
-        span.innerText = (labels[i] || '') + (select.options[idx]?.text || '');
-        span.style.fontWeight = 'bold';
-        select.replaceWith(span);
-    });
+        span.innerText =
+            `Venue: ${venueSelect.options[venueSelect.selectedIndex].text}`;
+
+        venueSelect.replaceWith(span);
+    };
 
     // Add separators between the game-details items
     element.querySelectorAll('.game-details').forEach(details => {
