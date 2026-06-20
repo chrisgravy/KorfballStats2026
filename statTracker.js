@@ -950,6 +950,8 @@ function exportPDF() {
     // Snapshot all live values BEFORE cloning
     const liveInputValues = [...original.querySelectorAll('input')].map(i => i.value);
     const liveSelectIndices = [...original.querySelectorAll('select')].map(s => s.selectedIndex);
+    // Snapshot team names separately before cloning
+    const liveTeamNames = [...original.querySelectorAll('.team-select')].map(s => s.options[s.selectedIndex]?.text || '');
     const liveStatValues = [...original.querySelectorAll('.stat-value')].map(s => ({
         q1: s.dataset.q1,
         q2: s.dataset.q2,
@@ -1030,9 +1032,9 @@ function exportPDF() {
     });
 
     // Convert team selects → plain team name spans
-    element.querySelectorAll('.team-select').forEach(sel => {
+        element.querySelectorAll('.team-select').forEach((sel, i) => {
         const span = document.createElement('span');
-        span.innerText = sel.options[sel.selectedIndex]?.text || '';
+        span.innerText = liveTeamNames[i] || '';
         span.style.fontWeight = 'bold';
         span.style.color = 'inherit';
         sel.replaceWith(span);
