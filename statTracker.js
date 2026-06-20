@@ -820,11 +820,11 @@ function updateTrackingMode() {
 function saveGame() {
     try {
         const data = {
-            date:     document.getElementById('matchDate')?.value || '',
+            date: document.getElementById('matchDate')?.value || '',
             division: document.getElementById('divisionSelect')?.selectedIndex || 0,
-            round:    document.getElementById('roundSelect')?.selectedIndex || 0,
-            match:    document.getElementById('matchSelect')?.selectedIndex || 0,
-            teams:    []
+            round: document.getElementById('roundSelect')?.selectedIndex || 0,
+            match: document.getElementById('matchSelect')?.selectedIndex || 0,
+            teams: []
         };
 
         document.querySelectorAll('.team-sheet').forEach(sheet => {
@@ -1006,23 +1006,47 @@ function exportPDF() {
         if (liveTotalValues[i] !== undefined) td.innerText = liveTotalValues[i];
     });
 
-    // Convert inputs → spans using snapshotted values
-    element.querySelectorAll('input').forEach((input, i) => {
+    // Convert game-detail selects → labeled spans
+    const selectMappings = [
+        { id: 'trackingMode', label: null },        // hide from PDF
+        { id: 'divisionSelect', label: 'Division: ' },
+        { id: 'roundSelect', label: 'Round: ' },
+        { id: 'matchSelect', label: null },         // hide from PDF
+    ];
+
+    selectMappings.forEach(({ id, label }) => {
+        const sel = element.querySelector(`#${id}`);
+        if (!sel) return;
+        if (label === null) {
+            sel.remove();
+            return;
+        }
+        const original = document.getElementById(id);
+        const idx = original ? original.selectedIndex : sel.selectedIndex;
         const span = document.createElement('span');
-        const labels = ['Match Date: '];
-        span.innerText = (labels[i] || '') + (liveInputValues[i] ?? '');
+        span.innerText = label + (sel.options[idx]?.text || '');
         span.style.fontWeight = 'bold';
-        input.replaceWith(span);
+        sel.replaceWith(span);
     });
 
-    // Convert selects → spans using snapshotted indices
-    element.querySelectorAll('select').forEach((select, i) => {
+    // Convert team selects → plain team name spans
+    element.querySelectorAll('.team-select').forEach(sel => {
         const span = document.createElement('span');
-        const idx = liveSelectIndices[i] ?? select.selectedIndex;
-        const labels = ['Venue: '];
-        span.innerText = (labels[i] || '') + (select.options[idx]?.text || '');
+        span.innerText = sel.options[sel.selectedIndex]?.text || '';
         span.style.fontWeight = 'bold';
-        select.replaceWith(span);
+        span.style.color = 'inherit';
+        sel.replaceWith(span);
+    });
+
+    // Remove any remaining selects
+    element.querySelectorAll('select').forEach(sel => sel.remove());
+
+    // Convert inputs → spans (none expected in index.html but just in case)
+    element.querySelectorAll('input').forEach((input, i) => {
+        const span = document.createElement('span');
+        span.innerText = liveInputValues[i] ?? '';
+        span.style.fontWeight = 'bold';
+        input.replaceWith(span);
     });
 
     // Add separators between the game-details items
@@ -1092,11 +1116,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('trackingMode')?.addEventListener('change', updateTrackingMode);
 
-    document.getElementById('keyModal')?.addEventListener('click', function(e) {
+    document.getElementById('keyModal')?.addEventListener('click', function (e) {
         if (e.target === this) hideKey();
     });
 
-    document.getElementById('logModal')?.addEventListener('click', function(e) {
+    document.getElementById('logModal')?.addEventListener('click', function (e) {
         if (e.target === this) hideLog();
     });
 
