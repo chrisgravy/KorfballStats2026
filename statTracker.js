@@ -951,7 +951,7 @@ function exportPDF() {
     const liveInputValues = [...original.querySelectorAll('input')].map(i => i.value);
     const liveSelectIndices = [...original.querySelectorAll('select')].map(s => s.selectedIndex);
     // Snapshot team names separately before cloning
-    const liveTeamNames = [...original.querySelectorAll('.team-select')].map(s => s.options[s.selectedIndex]?.text || '');
+    const liveTeamNames = [...original.querySelectorAll('.team-select')].map(s => s.value || '');
     const liveStatValues = [...original.querySelectorAll('.stat-value')].map(s => ({
         q1: s.dataset.q1,
         q2: s.dataset.q2,
